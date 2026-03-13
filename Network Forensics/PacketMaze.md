@@ -68,6 +68,9 @@ Q7: What is the ephemeral public key provided by the server during the TLS hands
 Dùng lệnh tls.handshake.session_id == da4a0000342e4b73459d7360b4bea971cc303ac18d29b99067e46d16cc07f4ff để tìm gói tin có dòng chữ: Server Key Exchange
 
 Nhìn xuống packet details mở mục Transport Layer Security
+
 Mở mục TLSv1.2 Record Layer: Handshake Protocol: Server Key Exchange.
+
 Mở tiếp Handshake Protocol: Server Key Exchange.
-Mở mục EC Diffie-Hellman Server Params ta lấy được  Pubkey: 04edcc123af7b13e90ce101a31c2f996f471a7c8f48a1b81d765085f548059a550f3f4f62ca1f0e8f74d727053074a37bceb2cbdc7ce2a8994dcd76dd6834eefc5438c3b6da929321f3a1366bd14c877cc83e5d0731b7f80a6b80916efd4a23a4d
+
+Mở mục EC Diffie-Hellman Server Params ta lấy được Pubkey: 04edcc123af7b13e90ce101a31c2f996f471a7c8f48a1b81d765085f548059a550f3f4f62ca1f0e8f74d727053074a37bceb2cbdc7ce2a8994dcd76dd6834eefc5438c3b6da929321f3a1366bd14c877cc83e5d0731b7f80a6b80916efd4a23a4d
