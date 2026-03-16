@@ -39,3 +39,9 @@ chọn Statistics -> Capture File Properties.
  Q7: Which protocol was used to carry over the exploit?
 
  smb do dữ liệu exploit thực chất được gói trong DSSETUP, DSSETUP lại được gói trong DCERPC, và DCERPC lại được truyền đi trên đường truyền bằng SMB.
+
+ Q8: Which protocol did the attacker use to download additional malicious files to the target system?
+
+ Ta biết attacker đã khai thác lỗ hổng CVE-2003-0533 từ đó ta biết được Hacker muốn chiếm quyền điều khiển máy Windows thông qua dịch vụ SMB và biến nó thành một máy Proxy (Socks5).
+
+ 
