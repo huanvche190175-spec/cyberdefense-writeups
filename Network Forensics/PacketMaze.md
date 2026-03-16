@@ -74,3 +74,33 @@ Mở mục TLSv1.2 Record Layer: Handshake Protocol: Server Key Exchange.
 Mở tiếp Handshake Protocol: Server Key Exchange.
 
 Mở mục EC Diffie-Hellman Server Params ta lấy được Pubkey: 04edcc123af7b13e90ce101a31c2f996f471a7c8f48a1b81d765085f548059a550f3f4f62ca1f0e8f74d727053074a37bceb2cbdc7ce2a8994dcd76dd6834eefc5438c3b6da929321f3a1366bd14c877cc83e5d0731b7f80a6b80916efd4a23a4d
+
+Q8: What is the first TLS 1.3 client random that was used to establish a connection with protonmail.com?
+
+Dùng lệnh tls.handshake.extensions_server_name == "protonmail.com" để tìm kiếm các gói tin Client Hello 
+
+Dưới phần Packet Details ta lấy được Client random là: 24e92513b97a0348f733d16996929a79be21b0b1400cd7e2862a732ce7775b70
+
+Q9: Which country is the manufacturer of the FTP server’s MAC address registered in?
+
+Từ câu trước ta biết rằng hacker đã lập ra 1 máy chủ ftp để gửi ảnh lên với ip 192.1.168.20
+
+Dùng lệnh ip.src == 192.168.1.20 để tìm các gói tin có source từ ip này
+
+Chọn bất kỳ gói tin nào, xuống phần packet detaisl để lấy địa chỉ MAC
+
+Lên hwaddress.com để tra địa chỉ MAC biết được quốc gia là: United States
+
+Q10: What time was a non-standard folder created on the FTP server on the 20th of April?
+
+Để tìm thư mục được tạo trên máy chủ ftp ta dùng lệnh ftp.request.command == "MKD", do muốn tạo thư mục trên ftp sever thì cần gõ một lệnh có tên là MKD
+
+Không kiếm được gói tin nào -> Wireshark bắt đầu ghi lại luồng mạng sau khi cái thư mục đó đã được tạo ra
+
+Dùng lệnh ftp-data, thấy có gói tin với info LIST -? follow tcp stream ta thấy có folder tạo vào ngày 20 tháng 4 và bên cạnh là giờ tạo: 17:53
+
+Q11: What URL was visited by the user and connected to the IP address 104.21.89.171?
+
+Dùng lệnh ip.addr == 104.21.89.171 && http.request để lọc ra các gói tin mà địa chỉ ip kia đang giao tiếp kèm theo http.request để lọc việc truy cập URL
+
+Thấy có 1 gói tin, chọn gói tin và xuống packet details, mở rộng Hypertext Transfer Protocol ta thấy dòng full request sẽ hiện ra URL: [Full request URI: http://dfir.science/]
