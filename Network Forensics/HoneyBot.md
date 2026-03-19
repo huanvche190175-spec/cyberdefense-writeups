@@ -95,3 +95,12 @@ Lưu về máy ( malware.exe ) rồi dùng md5sum để lấy mã hash, sau đó
 First submission: 2007-06-27
 
 Q12: What is the key used to encode the shellcode?
+
+Giờ ta cần lấy cái gói tin chứa Shellcode và lấy cái Key nằm trong phần Decoder Stub
+
+Dùng lệnh để tìm đòn tấn công đầu tiên từ IP kẻ địch: ip.src == 98.114.205.102 && tcp.dstport < 1024
+
+<img width="1190" height="485" alt="image" src="https://github.com/user-attachments/assets/497f8e22-16d9-4d01-8aad-5bcdf076a20d" />
+
+
+
